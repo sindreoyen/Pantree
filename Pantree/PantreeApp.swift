@@ -10,9 +10,10 @@ import SwiftData
 
 @main
 struct PantreeApp: App {
+    // MARK: - Attributes
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Grocery.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -23,7 +24,9 @@ struct PantreeApp: App {
         }
     }()
 
+    // MARK: - Body
     var body: some Scene {
+        // Creating window group with environment ModelContainer
         WindowGroup {
             ContentView()
         }
